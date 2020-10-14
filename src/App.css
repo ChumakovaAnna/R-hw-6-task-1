@@ -1,0 +1,74 @@
+.App {
+  padding: 2em;
+}
+
+.label {
+  display: block;
+  padding-bottom: 0.75em;
+
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2em;
+}
+
+.input {
+  margin-right: 1em;
+}
+
+.button {
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+}
+
+.clocks_container {
+  display: flex;
+}
+
+.clock {
+  padding: 1em;
+}
+
+.nameAndClose {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1em;
+}
+
+.close {
+  font-weight: 700;
+  color: rgb(255, 40, 40);
+}
+
+.clockFace_container {
+  position: relative;
+
+  width: 10em;
+}
+
+.hands {
+  position: absolute;
+  top: 0.5em;
+  left: 4.6em;
+  height: 4.5em;
+
+  transform-origin: 6px 100%;
+}
+
+.minute {
+  top: 1.25em;
+  height: 3.75em;
+
+  transform-origin: 5px 100%;
+  transform: rotate(270deg);
+}
+.hours {
+  transform: rotate(90deg);
+}
+.second {
+  transform: rotate(180deg);
+}
