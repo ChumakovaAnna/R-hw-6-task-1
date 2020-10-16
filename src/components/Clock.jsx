@@ -17,6 +17,7 @@ class Clock extends Component {
 
   constructor({id, name, zone}) {
     super();
+    console.log("constructor")
     this.id = id;
     this.zone = Number(zone);
     this.name = name;
@@ -26,6 +27,11 @@ class Clock extends Component {
       second: 0,
     };
     this.interval = null;
+    this.styles = {
+      hour: null,
+      minute: null,
+      second: null
+    }
   }
 
   render() {
@@ -38,9 +44,9 @@ class Clock extends Component {
         <div className="clockFace_container">
           <img src={clockFace} alt="clock face"/>
           <div>
-            <img src={hourHand} className="hands hours" alt="hour hand" />
-            <img src={minuteHand} className="hands minute" alt="hour hand" />
-            <img src={secondHand} className="hands second" alt="hour hand" />
+            <img src={hourHand} style={{transform: `${this.styles.hour}`}} className="hands hours" alt="hour hand" />
+            <img src={minuteHand} style={{transform: `${this.styles.minute}`}} className="hands minute" alt="minute hand" />
+            <img src={secondHand} style={{transform: `${this.styles.second}`}} className="hands second" alt="second hand" />
           </div>
         </div>
         <span>{this.state.hour}:{this.state.minute}:{this.state.second}</span>
@@ -60,8 +66,24 @@ class Clock extends Component {
     // console.log(this.state)
   }
 
+  arrowHourStyle() {
+    console.log(this.state)
+    return this.state.hour < 12 ? (360 / 12 * this.state.hour) : (360 / 12 * (this.state.hour - 12));
+  }
+  
+  arrowMinuteSecondStyle(arrow) {
+    console.log(this.state[arrow]);
+    return 360 / 60 * this.state[arrow]
+  }
+
   componentDidMount() {
+    console.log("componentDidMount")
+    this.getTime();
     this.interval = setInterval(() => this.getTime(), 1000);
+  }
+
+  componentDidUpdate() {
+    this.getTime();
   }
 
   componentWillUnmount() {

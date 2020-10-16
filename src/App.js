@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Form onSubmit={handleSubmit}></Form>
       <div className="clocks_container">
-        {clocks.map(item => <Clock key={item.id} {...item} onClose={handleClose}></Clock>)}
+        {clocks.map(item => <Clock key={item.id} item={item} onClose={handleClose}></Clock>)}
       </div>
     </div>
   );
