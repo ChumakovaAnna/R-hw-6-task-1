@@ -63,7 +63,7 @@ class Clock extends Component {
       prevState.minute = moment().minute();
       prevState.second = moment().second();
     });
-    // console.log(this.state)
+    console.log(this.state)
   }
 
   arrowHourStyle() {
@@ -78,7 +78,7 @@ class Clock extends Component {
 
   componentDidMount() {
     console.log("componentDidMount")
-    this.getTime();
+    // this.getTime();
     this.interval = setInterval(() => this.getTime(), 1000);
   }
 
