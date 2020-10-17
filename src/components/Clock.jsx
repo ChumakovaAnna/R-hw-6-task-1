@@ -9,15 +9,14 @@ import moment from "moment";
 
 class Clock extends Component {
   static propTypes = {
-    // id: PropTypes.string.isRequired,
-    // name: PropTypes.string.isRequired,
-    // zone: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    zone: PropTypes.string.isRequired,
     onClose: PropTypes.func.isRequired,
   };
 
   constructor({id, name, zone}) {
     super();
-    console.log("constructor")
     this.id = id;
     this.zone = Number(zone);
     this.name = name;
@@ -57,33 +56,35 @@ class Clock extends Component {
   getTime() {
     const hourAndZone = moment().hour() + this.zone;
     const hour = hourAndZone > 23 ? hourAndZone - 23 : hourAndZone;
+    const newState = {
+      hour: hour,
+      minute: moment().minute(),
+      second: moment().second()
+    }
 
-    this.setState(prevState => {
-      prevState.hour = hour;
-      prevState.minute = moment().minute();
-      prevState.second = moment().second();
-    });
-    console.log(this.state)
+    this.setState(newState);
   }
 
   arrowHourStyle() {
-    console.log(this.state)
-    return this.state.hour < 12 ? (360 / 12 * this.state.hour) : (360 / 12 * (this.state.hour - 12));
+    const number = this.state.hour < 12 ? (360 / 12 * this.state.hour) : (360 / 12 * (this.state.hour - 12));
+    this.styles.hour = `rotate(${number}deg)`;
   }
   
   arrowMinuteSecondStyle(arrow) {
-    console.log(this.state[arrow]);
-    return 360 / 60 * this.state[arrow]
+    const number = 360 / 60 * this.state[arrow]
+    this.styles[arrow] = `rotate(${number}deg)`;
+  }
+
+  getTimeAndStyle() {
+    this.getTime();
+    this.arrowHourStyle()
+    this.arrowMinuteSecondStyle("minute")
+    this.arrowMinuteSecondStyle("second")
   }
 
   componentDidMount() {
-    console.log("componentDidMount")
-    // this.getTime();
-    this.interval = setInterval(() => this.getTime(), 1000);
-  }
-
-  componentDidUpdate() {
-    this.getTime();
+    this.getTimeAndStyle();
+    this.interval = setInterval(() => this.getTimeAndStyle(), 1000);
   }
 
   componentWillUnmount() {

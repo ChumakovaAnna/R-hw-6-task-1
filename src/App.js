@@ -4,7 +4,7 @@ import Form from "./components/Form"
 import Clock from "./components/Clock"
 
 function App() {
-  const [clocks, setClocks] = useState([{id: 1, zone: 5, name: "Moscow"}]);
+  const [clocks, setClocks] = useState([]);
 
   const handleSubmit = (addClock) => {
     setClocks(prevState => [...prevState, addClock]);
