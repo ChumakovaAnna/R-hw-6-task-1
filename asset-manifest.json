@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/R-hw-6-task-1/static/css/main.ac1ae2af.chunk.css",
+    "main.js": "/R-hw-6-task-1/static/js/main.6b38f98c.chunk.js",
+    "main.js.map": "/R-hw-6-task-1/static/js/main.6b38f98c.chunk.js.map",
+    "runtime-main.js": "/R-hw-6-task-1/static/js/runtime-main.f3be1454.js",
+    "runtime-main.js.map": "/R-hw-6-task-1/static/js/runtime-main.f3be1454.js.map",
+    "static/js/2.5b9524f3.chunk.js": "/R-hw-6-task-1/static/js/2.5b9524f3.chunk.js",
+    "static/js/2.5b9524f3.chunk.js.map": "/R-hw-6-task-1/static/js/2.5b9524f3.chunk.js.map",
+    "index.html": "/R-hw-6-task-1/index.html",
+    "precache-manifest.fb9a880c23f634569f76b7e33ec2cf62.js": "/R-hw-6-task-1/precache-manifest.fb9a880c23f634569f76b7e33ec2cf62.js",
+    "service-worker.js": "/R-hw-6-task-1/service-worker.js",
+    "static/css/main.ac1ae2af.chunk.css.map": "/R-hw-6-task-1/static/css/main.ac1ae2af.chunk.css.map",
+    "static/js/2.5b9524f3.chunk.js.LICENSE.txt": "/R-hw-6-task-1/static/js/2.5b9524f3.chunk.js.LICENSE.txt",
+    "static/media/clockFace.svg": "/R-hw-6-task-1/static/media/clockFace.3a875958.svg",
+    "static/media/hourHand.svg": "/R-hw-6-task-1/static/media/hourHand.e9ad9691.svg",
+    "static/media/minuteHand.svg": "/R-hw-6-task-1/static/media/minuteHand.d5db1757.svg",
+    "static/media/secondHand.svg": "/R-hw-6-task-1/static/media/secondHand.dffcd1d1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f3be1454.js",
+    "static/js/2.5b9524f3.chunk.js",
+    "static/css/main.ac1ae2af.chunk.css",
+    "static/js/main.6b38f98c.chunk.js"
+  ]
+}
